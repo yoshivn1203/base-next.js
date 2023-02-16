@@ -1,5 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components';
 
+import utility from './utility';
+
 const reset = css`
   * {
     margin: 0;
@@ -10,6 +12,7 @@ const reset = css`
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
+  ${utility}
 `;
 
 export default GlobalStyle;
