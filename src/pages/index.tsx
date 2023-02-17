@@ -6,6 +6,8 @@ import React from 'react';
 
 import Filter from '@/components/pages/Filter';
 
+import * as S from './styled';
+
 function Home() {
   const { t } = useTranslation('common');
   const [filter, setFilter] = useState({});
@@ -20,9 +22,12 @@ function Home() {
     }
   };
 
-  console.log(filter);
-
-  return <Filter filter={filter} onchangeFilter={onchangeFilter} />;
+  return (
+    <S.Wrapper>
+      <Filter filter={filter} onchangeFilter={onchangeFilter} />
+      <div>sada</div>
+    </S.Wrapper>
+  );
 }
 
 export default Home;

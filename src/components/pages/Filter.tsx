@@ -3,6 +3,8 @@ import React from 'react';
 import { Collapse, Checkbox } from 'antd';
 import type { CheckboxValueType } from 'antd/es/checkbox/Group';
 
+import * as S from './styled';
+
 const { Panel } = Collapse;
 
 const MIN_RADIO_SHOW = 5;
@@ -24,8 +26,12 @@ const categoryListTag = [
   {
     name: 'Category',
     tag: [
-      { name: '4', nameSlug: '4' },
-      { name: '5', nameSlug: '5' },
+      { name: '7', nameSlug: '7' },
+      { name: '8', nameSlug: '8' },
+      { name: '9', nameSlug: '9' },
+      { name: '10', nameSlug: '10' },
+      { name: '11', nameSlug: '11' },
+      { name: '12', nameSlug: '12' },
     ],
   },
 ];
@@ -44,7 +50,7 @@ function Filter({ filter, onchangeFilter }: any) {
   // console.log('filter', filter);
 
   return (
-    <Collapse
+    <S.Filter
       defaultActiveKey={['0', '1', '2', '3']}
       ghost
       expandIconPosition="end"
@@ -89,16 +95,8 @@ function Filter({ filter, onchangeFilter }: any) {
           )}
         </Panel>
       ))}
-    </Collapse>
+    </S.Filter>
   );
 }
 
 export default Filter;
-
-export async function getServerSideProps({ locale }: { locale: string }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  };
-}

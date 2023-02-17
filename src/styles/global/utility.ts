@@ -5,6 +5,7 @@ const utility = css`
   .ant-checkbox-group {
     display: grid !important;
   }
+
   .ant-checkbox-group-item + .ant-checkbox-group-item {
     margin-left: 0;
   }
